@@ -1,0 +1,8 @@
+---
+version: "3.2"
+services:
+  rpmbuild:
+    build:
+      context: ./
+    volumes:
+      - ./rpm/RPMS:/root/rpmbuild/RPMS
