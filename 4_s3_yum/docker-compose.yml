@@ -1,0 +1,21 @@
+---
+version: "3.2"
+services:
+  salt:
+    build:
+      context: .
+    environment:
+      - AWS_ACCESS_KEY_ID=foo
+      - AWS_SECRET_KEY_ID=foobarbaz
+    volumes:
+      - ./minio.repo:/etc/yum.repos.d/minio.repo
+      - ./salt:/srv/salt/foo
+    command: yum update
+  minio:
+    image: minio/minio:latest
+    environment:
+      - MINIO_ACCESS_KEY=foo
+      - MINIO_SECRET_KEY=foobarbaz
+    volumes:
+      - ./data:/data
+    command: minio server /data

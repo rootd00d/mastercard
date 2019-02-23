@@ -1,0 +1,8 @@
+[s3-x86_64]
+name=S3-x86_64
+baseurl=http://minio:9000/x86_64
+enabled=1
+s3_enabled=1
+gpgcheck=0
+key_id=foo
+secret_key=foobarbaz

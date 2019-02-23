@@ -44,8 +44,14 @@ system, use CLI tools to do the following (send us commands + outputs):
 
     Alternatively, a “serverless” approach could be to use S3 with an authentication scheme like IAM through the usage of a yum plugin. Write a value state / formula for a configuration management tool (SaltStack preferred) to install a S3 yum plugin (https://github.com/seporaitis/yum-s3-iam) and configure it.
 
+> Wasn't able to finish this.  It was my plan to configure a working solution that used Minio to host a private S3-based Yum repository that could be accessed from another container.  The Minio Yum repository would contain the RPM produced in problem #5.  -- I'd need at least a few more hours for this.
+
 5. Building an RPM for easy management of internal software is a common strategy to deploy
 software. Create an RPM of a command line tool that prints out “Awe$ome”. Bonus: install this
 in a fashion like #4 above.
+
+> Enter `5_rpm` and issue `docker-compose up` to build the RPM
+
 Zip up all relevant files and send back to us.
+
 Best regards, and good luck!
