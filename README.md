@@ -3,9 +3,13 @@ Technical Interview Assignment for Mastercard
 
 ## DevOps Engineer Code Test
 
+> Simply run `docker-compose up` in 1_nginx_apache, modify your `/etc/hosts` file to include something like `127.0.0.1 example.com www.example.com` and navigate to https://www.example.com/?foo and http://www.example.com:8080/?bar
+
 1. In any Linux based system (CentOS/RHEL preferred):
 
     a. Configure logrotate to rotate /var/log/httpd/access_log (or equivalent) hourly
+
+> Doing this in a Docker container is a bit clunky, and I generally wouldn't ever actually configure log rotation in a container like this
 
     b. Configure an Apache HTTPD VirtualHost to do all of:
 
@@ -16,6 +20,8 @@ Technical Interview Assignment for Mastercard
         iii. Redirect www.example.com to example.com.
 
     c. Configure nginx as a load balancer to a local Apache HTTPD listening on 8080-8090
+
+> I couldn't tell whether it's NGINX or Apache that should be listening on 8080-8090 - so I just went with NGINX
 
 2. In your favourite programming language (PHP or Python preferred):
 

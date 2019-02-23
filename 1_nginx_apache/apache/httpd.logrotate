@@ -1,0 +1,10 @@
+/var/log/httpd/*_log {
+    hourly
+    missingok
+    notifempty
+    sharedscripts
+    delaycompress
+    postrotate
+        kill -USR1 `pidof httpd` > /dev/null 2>/dev/null || true
+    endscript
+}
